@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BondFree</title>
+
+    <base href="/">
+
+    <link rel="stylesheet" href="./bower_components/bootswatch/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="./bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/bower_components/angular-google-places-autocomplete/src/autocomplete.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./bower_components/stamplay-js-sdk/dist/stamplay.min.js"></script>
+    <script>
+        Stamplay.init('bondfree');
+    </script>
+
+    <!-- load our other JS dependencies -->
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-stamplay/angular-stamplay.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+    <script src="/bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>    
+
+    <!-- <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.js"></script> -->
+
+
+    <!-- load our angular components -->
+    <script src="./app/components/home/home.js"></script>
+    <script src="./app/components/room/room.js"></script>
+    <script src="./app/components/nav/nav.js"></script>
+    <script src="./app/components/booking/booking.js"></script>
+    <script src="./app/components/profile/profile.js"></script>
+    <script src="./app/components/admin/admin.js"></script>
+    <script src="./app/components/authenticate/authenticate.js"></script>
+
+    <!-- load our angular services -->
+    <script src="./app/shared/BookingService.js"></script>
+    <script src="./app/shared/UserService.js"></script>
+    <script src="./app/shared/RoomService.js"></script>
+
+    <!-- load our core angular app -->
+    <script src="./app/app.routes.js"></script>
+    <script src="./app/app.js"></script>
+
+
+
+</head>
+<body ng-app="bondfree">
+
+  <div ui-view></div>
+
+  <div ui-view name="nav"></div>
+
+  <div>
+    <div ui-view name="content"></div>
+  </div>
+
+<!--   <footer class="text-center">
+    Airbnb
+</footer> -->
+
+
+</body>
+</html>

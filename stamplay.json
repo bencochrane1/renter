@@ -1,0 +1,10 @@
+{
+  "appId": "bondfree",
+  "apiKey": "573888a500905149b6111fafe88385b0d697067947e7e828d6c5071e1fcc9720",
+  "public": "./",
+  "ignore": [
+    "stamplay.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
