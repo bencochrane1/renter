@@ -1,0 +1,148 @@
+<div class="flex-row nav-hero">
+  <div class="flex-column nav-hero-column">
+    <div class="flex-row">
+
+      <div class="flex-row flex-grow nav-header">
+        <div class="flex-row flex-grow icon-container">
+          <div class="logo-home-container">
+            <div class="nav-logo">
+              <span class="logo-first-part">Bond</span>
+              <span class="logo-second-part">Free</span>
+            </div>
+          </div>
+          <div uib-popover-template="popover.renterTemplateUrl"
+               popover-trigger="mouseenter" 
+               popover-placement="bottom"
+               popover-popup-close-delay="1000"
+               class="nav-renters">
+               Renters <i class="ion-arrow-down-b"></i></div>
+          <div uib-popover-template="popover.principalTemplateUrl"
+               popover-trigger="mouseenter" 
+               popover-placement="bottom"
+               popover-popup-close-delay="1000"
+               class="nav-principals">
+               Agencies <i class="ion-arrow-down-b"></i></div>
+        </div>
+        <div class="flex-row nav-objects">
+
+        <div class="flex-column nav-login-switch-prompt">
+          <div class="flex-row">
+            <div class="flex-column"><i class="nav-icon icon-rental-agency ion-clipboard"></i></div>
+            <div class="flex-column nav-title">Are you a rental agency?</div>
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="flex-row flex-justify-center">
+            <div class="login-button-nav" ui-sref="agency">
+              <span class="login">Log In</span>
+              <span class="agency-login">Agency Log In</span>
+            </div>
+          </div>
+        </div>     
+
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row flex-grow">
+      
+      <div class="flex-row flex-justify-center middle-container">
+
+        <div class="flex-column pitch-container">
+
+          <div class="login-pitch" ng-class="{ 'slide-away' : !showLogin }" ng-show="showLogin">
+            
+            <div class="flex-row flex-justify-center nav-rental">Move into your next rental faster by going BondFree.</div>
+
+            <div class="flex-column input-containers">
+                <p class="input-group">
+                  <input placeholder="Email address" type="text" ng-focus="home.toggleLogin()" ng-class="{ 'login-error' : home.loginError }" class="form-control password-input"/>
+                </p>
+            </div>  
+
+            <div class="flex-column input-containers">
+                <p class="input-group">
+                  <input placeholder="Password" type="password" ng-focus="home.toggleLogin()" ng-class="{ 'login-error' : home.loginError }" class="form-control password-input"/>
+                  <p class="forgot-password" ng-click="open()">Forgot password?</p>
+                </p>
+            </div>  
+
+            <div class="flex-column input-containers" ng-if="home.loggingIn">
+              <div class="login-warnings alert alert-danger alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                It looks like your email or password weren't quite right. <br>Did you <a href="#" class="alert-link" ng-click="open()">forget your password?</a>
+              </div>            
+            </div> 
+
+            <div class="flex-column input-containers">
+              <div>
+                <div ng-click="home.toggleLogin()" class="home-search-button" ng-class="{ 'logging-in' : home.loggingIn }">
+                  <span ng-if="home.loggingIn"><div class="loading"><div class="outer"></div><div class="inner"></div></div>Logging In...</span>
+                  <span ng-if="!home.loggingIn">Log In</span>
+                </div>                                 
+              </div>            
+            </div>   
+
+
+            <div class="flex-column sign-up-option-below">
+              <div class="flex-row flex-justify-center">
+                <span class="sign-up-prompt">Don't have an account yet?</span><div class="login-button-nav sign-up" ng-click="toggleLoginContainer()">Sign Up</div>
+              </div>
+            </div>   
+            
+          </div>
+
+          <div class="signup-pitch" ng-class="{ 'slide-in' : showLogin }" ng-hide="showLogin">
+            
+            <div class="flex-row flex-justify-center nav-rental">Move into your next rental faster by going BondFree.</div>
+
+            <div class="flex-column input-containers">
+                <p class="input-group">
+                  <input placeholder="Email address" type="text" class="form-control password-input"/>
+                </p>
+            </div>  
+
+            <div class="flex-column input-containers password-only-container">
+                <p class="input-group">
+                  <input placeholder="Password" type="password" class="form-control password-input"/>
+                </p>
+            </div>             
+
+            <div class="flex-column input-containers">
+              <div>
+                <div class="home-search-button">Sign Up</div>
+              </div>            
+            </div>   
+
+
+            <div class="flex-column sign-up-option-below">
+              <div class="flex-row flex-justify-center">
+                <span class="sign-up-prompt">Already have an account?</span><div class="login-button-nav sign-up" ng-click="toggleLoginContainer()">Log In</div>
+              </div>
+            </div>   
+            
+          </div>          
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flex-row flex-grow learn-more-container">
+      <div class="flex-row flex-grow flex-justify-center">
+        <span class="learn-more">Learn How It Works <i class="ion-arrow-down-b"></i></span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="flex-row">
+  <div class="flex-column flex-grow"></div>
+  <div class="flex-column flex-grow"></div>
+</div>
+
+
+
+

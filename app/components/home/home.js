@@ -1,18 +1,78 @@
 angular
     .module('app.home', [])
-    .controller('HomeCtrl', HomeCtrl);
+    .controller('HomeCtrl', HomeCtrl)
 
-function HomeCtrl($scope) {
+function HomeCtrl($scope, $uibModal, $log) {
 
     var home = this;
     home.open = open;
     home.today = today();
+    home.toggleLogin = toggleLogin;
+    home.loggingIn = false;
+    home.loginError = false;
+
+
+
+
+
+  $scope.items = ['item1', 'item2', 'item3'];
+
+  $scope.animationsEnabled = true;
+
+  $scope.open = function() {
+
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: '../app/components/home/reset-password.html',
+      controller: 'ResetPasswordCtrl',
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (selectedItem) {
+      $scope.selected = selectedItem;
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+
+
+
+
+
+
+
+
+
 
 
     function today() {
         home.dt = new Date();
     };
     
+    function toggleLogin() {
+
+      if (home.loginError) {
+        home.loginError = false;
+        home.loggingIn = false;
+        return;
+      }
+      console.log('here')
+      home.loggingIn = !home.loggingIn;
+      home.loginError = !home.loginError;
+    }
+
+
+
+    $scope.showLogin = true;
+
+    $scope.toggleLoginContainer =function() {
+      $scope.showLogin = !$scope.showLogin;
+    }
 
   $scope.clear = function () {
     $scope.dt = null;
@@ -127,7 +187,7 @@ function HomeCtrl($scope) {
     principalTemplateUrl: 'app/components/home/principal-popover.html'
   }
 
-}
+};
 
 
 

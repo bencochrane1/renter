@@ -10,8 +10,15 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
   .state('home', {
     url: '/',
     controller: 'HomeCtrl as home',
-    templateUrl: 'app/components/home/home.html'
+    templateUrl: 'app/components/home/home-renter.html'
   })
+
+  $stateProvider
+  .state('agency', {
+    url: '/agency',
+    controller: 'AgencyCtrl as agency',
+    templateUrl: 'app/components/agency/home-agency.html'
+  })  
 
   .state('room', {
     url: '/room',
