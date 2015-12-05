@@ -36,6 +36,10 @@ select {
   border-radius: 0;
 }
 
+.main-content-holder {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
 .main-content-no-data {
   padding-top: 30px;
   font-size: 1.1em; 
@@ -98,7 +102,7 @@ select {
 }
 
 .main-content-row .flex-row, .main-content-label-row .flex-row {
-  width: 20%;
+  min-width: 20%;
 }
 
 .main-content-row .flex-row {
@@ -114,7 +118,8 @@ select {
   background-color: #edefed;
   font-size: 1.3em;
   color: grey;
-  padding: 15px;  
+  padding: 15px; 
+  border-bottom: 1px solid lightgrey; 
 }
 
 .main-content-search input {
@@ -126,7 +131,11 @@ select {
 }
 
 .main-content-search input.form-control:focus {
-  box-shadow: 0 0 2px #1976d2;  
+  box-shadow: 0 0 4px #7DCD00;  
+}
+
+.form-control:focus {
+  border-color: rgba(0,0,0,0);
 }
 
 .main-center-content {
@@ -583,6 +592,13 @@ input.form-control.email-input {
   background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4) ), url(../img/office.jpg) no-repeat center center fixed;   
 }
 
+.main-user-nav-mobile {
+  display: none;
+}
+
+.main-user-nav {
+  display: block;
+}
 
 /*media queries*/
 
@@ -598,6 +614,14 @@ input.form-control.email-input {
   .nav-principals, .nav-renters, .nav-login-switch-prompt {
     display: none;
   }
+
+  .nav-login-switch-prompt.main-user-nav {
+    display: none;
+  }
+
+  .nav-login-switch-prompt.main-user-nav-mobile {
+    display: block;
+  }  
 
   .login-button-nav {
     width: 150px;
@@ -627,11 +651,94 @@ input.form-control.email-input {
     padding-left: 0px;
   }
 
+  .main-internal-content {
+    padding: 5px;
+  }
+
+  .bond-item-nav-mobile {
+    display: block;
+  }
+
+  .bond-item-nav {
+    display: none;
+  }
+
+  .main-internal-content .main-internal-only {
+    width: 100%;
+  }
+
+  .main-content-label-row .flex-row {
+    padding-right: 10px;
+  }
+
+  .main-content-row {
+    font-size: 0.8em;
+  }
+
+  .main-content-row .ion-chevron-right {
+    font-size: 2em;
+  }
+
+  .main-content-row .flex-row, .main-content-label-row .flex-row {
+    min-width: 23%;
+  }
+
+  .main-content-row .flex-row.bond-item-nav-mobile {
+    padding-right: 26px;
+    line-height: 69px;    
+  }
+
+  .main-content-row .flex-row {
+    padding-right: 47px;
+  }
+
+  .main-content-holder .content-holder {
+    width: 300px;
+  }
+
+  .main-center-content {
+    padding: 10px;
+  }
+
+  .main-user-nav {
+    display: none;
+  }
+
+  .main-user-nav-mobile {
+    display: block;
+    font-size: 0.8em;
+  }
+
+  .main-user-nav-mobile .nav-title.app-nav-title {
+    line-height: 32px;
+  }
+
+  .main-user-nav-mobile .icon-rental-agency {
+    position: relative;
+    bottom: 3px;
+    left: 9px;    
+  }
+
   .login-button-nav {
     font-size: 0.9em;
     height: 25px;
     line-height: 25px; 
     width: 100px;
+  }
+
+  .nav-logout-holder {
+    font-size: 0.8em;
+    display: block;
+  }
+
+  .nav-logout-holder .flex-row {
+    position: relative;
+    bottom: 6px;    
+  }  
+
+  .app-logout-button.login-button-nav {
+    height: 33px;
+    line-height: 33px;
   }
 
   .nav-objects {
@@ -653,10 +760,6 @@ input.form-control.email-input {
     width: 100%;
   }
 
-  .pitch-container {
-    /*padding-left: 40px;*/
-  }
-
   .input.form-control.email-input, input.form-control.password-input {
     width: 291px;
   }
@@ -668,7 +771,7 @@ input.form-control.email-input {
 
   .nav-header {
     height: 60px;
-    padding: 15px 10px 0 10px;
+    padding: 15px 0px 0 10px;
   }
 
   .home-search-button {
@@ -686,6 +789,19 @@ input.form-control.email-input {
     width: 130px;
   }
 }
+
+@media screen and (max-width: 414px) {
+
+}
+
+@media screen and (max-width: 375px) {
+
+}
+
+@media screen and (max-width: 320px) {
+
+}
+
 
 .logging-in {
   background-color: #A2CD5F;
