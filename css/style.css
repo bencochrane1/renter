@@ -667,16 +667,16 @@ input.form-control.email-input {
     display: none;
   }
 
+  .main-content-header {
+    padding: 5px 10px;
+  }
+
   .main-internal-content .main-internal-only {
     width: 100%;
   }
 
   .main-content-label-row .flex-row {
     padding-right: 10px;
-  }
-
-  .main-content-row {
-    font-size: 0.8em;
   }
 
   .main-content-row .ion-chevron-right {
