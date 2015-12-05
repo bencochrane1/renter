@@ -778,6 +778,10 @@ input.form-control.email-input {
   }
 
   .nav-header {
+    padding: 15px 10px 0 20px
+  }
+
+  .app-nav-header .nav-header {
     height: 60px;
     padding: 15px 0px 0 10px;
   }
