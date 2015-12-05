@@ -3,12 +3,12 @@ angular.module('app.routes', [])
 
 function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
   .state('home', {
-    url: '/',
+    url: '/home',
     controller: 'HomeCtrl as home',
     templateUrl: 'app/components/home/home-renter.html'
   })
@@ -19,6 +19,14 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     controller: 'AgencyCtrl as agency',
     templateUrl: 'app/components/agency/home-agency.html'
   })  
+
+
+  $stateProvider
+  .state('agencyDashboard', {
+    url: '/',
+    controller: 'AgencyDashboardCtrl as agency',
+    templateUrl: 'app/components/agency-dashboard/agency-dashboard.html'
+  })    
 
   .state('room', {
     url: '/room',

@@ -1,6 +1,7 @@
 /*Colours*/
 /*Green: #7DCD00*/
-/*Blue #1E65B8*/
+/*darkBlue #1E65B8*/
+/*light blue #1976d2*/
 
 /* FLEX BOX */
 .flex-column, .flex-row { display: flex; flex-basis: auto; }
@@ -33,6 +34,192 @@ select {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
+}
+
+.main-content-no-data {
+  padding-top: 30px;
+  font-size: 1.1em; 
+  display: none; 
+}
+
+.content-holder {
+  min-height: 400px;
+  background: white;  
+}
+
+.main-content-row .content-status {
+  color: #1976d2;
+}
+
+.content-view-button {
+  padding: 10px;
+}
+
+.content-view-button .login-button-nav {
+  color: #7DCD00;
+  -webkit-box-shadow: 0 0 0 3px lightgrey;
+  -webkit-transition: box-shadow 0.3s; 
+}
+
+.content-view-button .login-button-nav:hover {
+  -webkit-box-shadow: 0 0 0 3px rgba(125, 205, 0, 1);
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align icon */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+
+.main-content-label-row {
+  padding: 0 0 10px 10px;
+  border-bottom: 1px solid lightgrey;
+  font-weight: bolder;
+}
+
+.main-content-row {
+  padding: 10px 0 10px 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.main-content-row .flex-row, .main-content-label-row .flex-row {
+  width: 20%;
+}
+
+.main-content-row .flex-row {
+  padding-right: 10px;
+}
+
+.main-internal-content {
+  background-color: white;
+  padding: 25px;
+}
+
+.main-content-header {
+  background-color: #edefed;
+  font-size: 1.3em;
+  color: grey;
+  padding: 15px;  
+}
+
+.main-content-search input {
+  border: none;
+  border-radius: 0;  
+  border-bottom: 1px solid lightgrey;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.main-content-search input.form-control:focus {
+  box-shadow: 0 0 2px #1976d2;  
+}
+
+.main-center-content {
+  width: 100%;
+  padding: 40px 40px 40px 0;
+}
+
+.main-dashboard-container {
+  background-color: #f5f5f5;
+  min-height: 500px;
+}
+
+.main-side-nav {
+  width: 390px;
+  padding-left: 120px;
+  padding: 95px 0 0 50px;
+}
+
+.main-side-nav .flex-row {
+  font-size: 1.3em;
+  color: grey;
+  padding: 10px 30px 10px 10px;  
+}
+
+.flex-row.plus {
+  padding: 10px;
+}
+
+.main-nav-option {
+  min-width: 260px;
+}
+
+.main-nav-option:hover, .main-nav-option.main-nav-selected {
+  background: #edefed;
+  border-radius: 3px;  
+  border-radius: 2px 0 0 2px;
+  cursor: pointer;
+}
+
+.main-nav-option.main-add-application *:hover {
+}
+
+.main-nav-option.main-add-application {
+  padding: 0;
+}
+
+.main-add-application .flex-row {
+  font-size: 18.2px;
+}
+
+.main-side-nav .ion-plus {
+  margin-left: 10px;
+}
+
+
+.app-nav-header {
+  border-bottom: 1px solid lightgrey;
+}
+
+.nav-logo.app-nav-logo * {
+  color: #1976d2;
+}
+
+.app-nav-title.nav-title,  {
+  color: grey;
+}
+
+.login-button-nav.app-logout-button {
+  color: grey;
+}
+
+
+.app-logout-button.login-button-nav:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 0 0 0 3px #1976d2;
+}
+
+.app-logout-button.login-button-nav {
+  height: 40px;
+  line-height: 38px;
+  width: 90px;
+  background: rgba(255,255,255,0);
+  -webkit-box-shadow: 0 0 0 1px white;
+  text-align: center;
+  border-radius: 2px;
+  color: lightgrey;
+  font-size: 1.3em;
+  margin-top: 5px;
+  -webkit-transition: box-shadow 0.3s;  
+}
+
+.icon-rental-agency.ion-person {
+  color: lightgrey;
 }
 
 /* home */
@@ -418,6 +605,18 @@ input.form-control.email-input {
 
   .login {
     display: none;
+  }
+
+  .login.logout {
+    display: block;
+  }
+
+  .main-side-nav {
+    display: none;
+  }
+
+  .main-center-content {
+    padding-left: 40px;
   }
 
 }
