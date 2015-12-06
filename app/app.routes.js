@@ -26,7 +26,14 @@ function AppRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
     url: '/',
     controller: 'AgencyDashboardCtrl as agency',
     templateUrl: 'app/components/agency-dashboard/agency-dashboard.html'
-  })    
+  })   
+
+  $stateProvider
+  .state('newApplication', {
+    url: '/new-application',
+    controller: 'AgencyDashboardCtrl as agency',
+    templateUrl: 'app/components/agency-dashboard/new-application.html'
+  })      
 
   .state('room', {
     url: '/room',

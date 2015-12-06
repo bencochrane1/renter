@@ -12,9 +12,6 @@ function HomeCtrl($scope, $uibModal, $log) {
     home.loginError = false;
 
 
-
-
-
   $scope.items = ['item1', 'item2', 'item3'];
 
   $scope.animationsEnabled = true;
@@ -38,16 +35,6 @@ function HomeCtrl($scope, $uibModal, $log) {
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
-
-
-
-
-
-
-
-
-
-
 
 
     function today() {

@@ -1,0 +1,278 @@
+<div class="flex-column">
+    <div class="flex-row app-nav-header">
+
+      <div class="flex-row flex-grow nav-header">
+        <div class="flex-row flex-grow icon-container">
+          <div class="logo-home-container">
+            <div class="nav-logo app-nav-logo">
+              <span class="logo-first-part app-logo-first-part">Bond</span>
+              <span class="logo-second-part app-logo-second-part">Free</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex-row">
+
+        <div class="flex-column nav-login-switch-prompt main-user-nav">
+          <div class="flex-row">
+            <div class="flex-column"><i class="nav-icon icon-rental-agency ion-person"></i></div>
+            <div class="flex-column nav-title app-nav-title">Ben (Ray White Paddington)</div>
+          </div>
+        </div>
+        <div class="flex-column nav-login-switch-prompt main-user-nav-mobile">
+          <div class="flex-row">
+            <div class="flex-column"><i class="nav-icon icon-rental-agency ion-person"></i></div>
+            <div class="flex-column nav-title app-nav-title">Ben</div>
+          </div>
+        </div>        
+        <div class="flex-column nav-logout-holder">
+          <div class="flex-row flex-justify-center">
+            <div class="login-button-nav app-logout-button nav-logout-only" ui-sref="home">
+              <span class="login">Log Out</span>
+              <span class="agency-login">Log Out</span>
+            </div>
+          </div>
+        </div>     
+
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row main-dashboard-container">
+        <div class="flex-column main-side-nav">
+            <div class="flex-row main-nav-option">My Applications</div>
+            <div class="flex-row main-nav-option">My Agents</div>
+            <div class="flex-row main-nav-option main-add-application">
+                <div class="flex-row flex-grow">Add New Application</div>
+                <div class="flex-row plus"><i class="ion-plus"></i></div>
+            </div>
+            <div class="flex-row main-nav-option main-add-application">
+                <div class="flex-row flex-grow">Add New Agent</div>
+                <div class="flex-row plus"><i class="ion-plus"></i></div>
+            </div>            
+        </div>
+        <div class="flex-column main-center-content">
+
+            <div class="flex-row nav-content-holder">
+                <div class="flex-column flex-grow">
+                    <div class="flex-row flex-grow">
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-clipboard"></i>My Applications</div>
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-person"></i>My Agents</div>
+                    </div>
+                    <div class="flex-row flex-grow">
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-clipboard"></i>Add New Application</div>
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-person"></i>Add New Agent</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex-row main-content-holder">
+                <div class="flex-column flex-grow content-holder">
+                    <div class="flex-row main-content-header">Add New Application</div>               
+
+                    <div class="flex-row application-form-content">
+                        <div class="flex-column flex-grow">
+                            <div class="flex-row flex-justify-center">
+
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Tenant Email</span>
+                                    </p>
+                                    <p class="input-group">
+                                      <input placeholder="Email Address" type="text" ng-class="{ 'login-error' : agency.loginError }" class="form-control password-input app-password-input"/>
+                                    </p>
+                                </div>  
+                                                                 
+                            </div>
+
+                            <div class="flex-row flex-justify-center">
+
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Tenant Full Name</span>
+                                    </p>                                
+                                    <p class="input-group">
+                                      <input placeholder="Full Name" type="text" ng-class="{ 'login-error' : agency.loginError }" class="form-control password-input app-password-input"/>
+                                    </p>
+                                </div>  
+                                                                 
+                            </div> 
+
+                            <div class="flex-row flex-justify-center">
+
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Rental Address</span>
+                                    </p>                                
+                                    <p class="input-group" id="locationField">
+                                      <input id="autocomplete" g-places-autocomplete ng-model="searchLocation" placeholder="Address of Rental" type="text" class="form-control password-input" ng-focus="agency.toggleLogin()" ng-class="{ 'login-error' : agency.loginError }"  />
+                                    </p>
+                                </div>  
+                                                                 
+                            </div>                             
+
+                            <div class="flex-row flex-justify-center">
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Lease Start Date</span>
+                                    </p>                                
+
+                                    <p class="input-group">
+                                      <input 
+                                      ng-focus="agency.openCheckIn($event)" 
+                                      placeholder="Start Of Lease Date" 
+                                      type="text" 
+                                      class="form-control password-input" 
+                                      show-weeks="false" 
+                                      uib-datepicker-popup="{{agency.format}}" 
+                                      ng-model="agency.dtCheckIn" 
+                                      show-button-bar="false" 
+                                      is-open="agency.status.openedCheckIn" 
+                                      min-date="minDate" 
+                                      max-date="maxDate" 
+                                      datepicker-options="agency.dateOptions" 
+                                      date-disabled="agency.disabled(date, mode)" 
+                                      ng-required="true" 
+                                      close-text="Close" />
+                                    </p>
+                                </div>  
+                            </div>  
+
+                            <div class="flex-row flex-justify-center">
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Lease End Date</span>
+                                    </p>                                
+
+                                    <p class="input-group">
+                                      <input 
+                                      ng-focus="agency.openCheckOut($event)" 
+                                      placeholder="End Of Lease Date" 
+                                      type="text" 
+                                      class="form-control password-input" 
+                                      show-weeks="false" 
+                                      uib-datepicker-popup="{{agency.format}}" 
+                                      ng-model="agency.dtCheckOut" 
+                                      show-button-bar="false" 
+                                      is-open="agency.status.openedCheckOut" 
+                                      min-date="minDate" 
+                                      max-date="maxDate" 
+                                      datepicker-options="agency.dateOptions" 
+                                      date-disabled="agency.disabled(date, mode)" 
+                                      ng-required="true" 
+                                      close-text="Close" />
+                                    </p>
+                                </div>  
+                            </div>                                                          
+
+                            <div class="flex-row flex-justify-center upload-row">
+                                <div class="flex-column flex-grow">
+                                    <div class="flex-row flex-justify-center">
+
+                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
+                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        </div>
+
+                                        <div class="flex-row drag-and-drop-container">
+                                            <div class="flex-column flex-grow">
+                                                <div class="flex-row flex flex-justify-center">Upload Termsheet</div>
+                                            </div>
+                                        </div>
+
+                                        <div 
+                                           uib-popover="The termsheet outlines your rental agreement. You will recieve this from your rental agency when applying for your new rental."
+                                           popover-trigger="mouseenter" 
+                                           popover-title="What is the Termsheet?"
+                                           class="flex-row drag-and-drop-help">
+                                           <i class="ion-ios-help-outline"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>  
+
+                            <div class="flex-row flex-justify-center upload-row">
+                                <div class="flex-column flex-grow">
+                                    <div class="flex-row flex-justify-center">
+
+                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
+                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        </div>
+
+                                        <div class="flex-row drag-and-drop-container">
+                                            <div class="flex-column flex-grow">
+                                                <div class="flex-row flex flex-justify-center">Upload Drivers License</div>
+                                            </div>
+                                        </div>
+
+                                        <div 
+                                           uib-popover="Please upload a valid drivers license"
+                                           popover-trigger="mouseenter" 
+                                           class="flex-row drag-and-drop-help">
+                                           <i class="ion-ios-help-outline"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>  
+
+                            <div class="flex-row flex-justify-center upload-row">
+                                <div class="flex-column flex-grow">
+                                    <div class="flex-row flex-justify-center">
+
+                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
+                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        </div>
+
+                                        <div class="flex-row drag-and-drop-container">
+                                            <div class="flex-column flex-grow">
+                                                <div class="flex-row flex flex-justify-center">Upload Photo ID</div>
+                                            </div>
+                                        </div>
+
+                                        <div 
+                                           uib-popover="Please upload a passport style ID photo."
+                                           popover-trigger="mouseenter" 
+                                           popover-title="What type of ID photo?"
+                                           class="flex-row drag-and-drop-help">
+                                           <i class="ion-ios-help-outline"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>   
+
+                            <div class="flex-row flex-justify-center upload-row">
+                                <div class="flex-column flex-grow">
+                                    <div class="flex-row flex-justify-center">
+
+                                        <div class="flex-row drag-and-drop-ticked">
+                                        </div>
+
+                                        <div ng-class="{ 'logging-in' : agency.loggingIn }" ng-click="agency.toggleLogin()" class="flex-row drag-and-drop-container submit-app-container">
+                                            <div class="flex-column flex-grow">
+                                                <div class="flex-row flex flex-justify-center">
+                                                    <span ng-if="agency.loggingIn"><div class="loading"><div class="outer"></div><div class="inner"></div></div>Submitting...</span>
+                                                    <span ng-if="!agency.loggingIn">Submit Application</span>
+                                                </div>
+                                            </div>
+                                        </div>                                                                            
+
+                                        <div class="flex-row drag-and-drop-help">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>                                                                                                            
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

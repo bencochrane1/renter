@@ -36,6 +36,140 @@ select {
   border-radius: 0;
 }
 
+.upload-row:last-of-type {
+  margin-bottom: 30px;
+}
+
+.submit-app-container .loading {
+  bottom: -13px;
+}
+
+.drag-and-drop-container.submit-app-container.submit-app-container.logging-in {
+  background-color: #A2CD5F;
+}
+
+.drag-and-drop-container.submit-app-container {
+  background-color: #7DCD00;
+  color: white;
+  border: none;
+  transition: -webkit-box-shadow 0.3s;
+}
+
+.drag-and-drop-container.submit-app-container:hover {
+  background-color: #7DCD00;
+  -webkit-box-shadow: 0 0 0 3px rgba(125, 205, 0, 0.6);
+}
+
+.pac-item {
+  padding: 5px;
+}
+
+.pac-icon { 
+  background-image: url(../img/search-places.png);
+  background-position:center; 
+  background-repeat:no-repeat; 
+  background-size:16px 16px; 
+  border:none; 
+}
+
+.pac-item-selected .pac-icon { 
+  background-image: url(../img/search-places.png);
+  background-position:center; 
+  background-repeat:no-repeat; 
+  background-size:16px 16px; 
+  border:none; 
+  -webkit-filter: brightness(0) invert(1);
+}
+
+.pac-item:hover {
+  color: white;
+  background-color: #7DCD00;
+  cursor: pointer;
+}
+
+.pac-item-selected  {
+  background-color: #7DCD00;
+  color: white;
+}
+
+.pac-item-selected .pac-item-query {
+   color: white; 
+}
+
+.pac-icon:hover {
+  color: white;
+}
+
+
+.pac-item-query {
+  color: grey;
+}
+
+.pac-container {
+  color: lightgrey;
+}
+
+.pac-item:hover * {
+  color: white;
+}
+
+.upload-row {
+  margin-top: 20px;
+}
+
+.upload-row i.ion-ios-checkmark {
+  color: #7DCD00;
+}
+
+.drag-and-drop-container {
+  width: 55%;
+  border: 2px solid #1976d2;
+  height: 60px;
+  border-radius: 3px;
+  font-size: 1.3em;
+  max-width: 400px;
+  transition: background-color 0.3s;
+}
+
+.drag-and-drop-container:hover {
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+}
+
+.drag-and-drop-container .flex-column .flex-row {
+  line-height: 56px;
+}
+
+.drag-and-drop-help {
+  margin-left: 10px;
+}
+
+.drag-and-drop-ticked {
+  margin-right: 10px;
+}
+
+.drag-and-drop-help i, .drag-and-drop-ticked i {
+  font-size: 3em;
+}
+
+.drag-and-drop-help i:hover {
+  color: #7DCD00;
+}
+
+.drag-and-drop-container * {
+  text-align: center;
+}
+
+.input-containers.application-input-container {
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.input-containers.application-input-container input.password-input {
+  border: 1px solid lightgrey;
+}
+
 .nav-mobile-item {
   line-height: 50px;
   text-transform: capitalize;
@@ -51,7 +185,7 @@ select {
   margin-right: 5px;  
 }
 
-.nav-mobile-item:hover {
+.nav-mobile-item:hover, .nav-mobile-item:focus  {
   color: white;
   background: #7DCD00;
 }
@@ -82,8 +216,12 @@ select {
   display: none; 
 }
 
+.no-data-text {
+  text-align: center;
+}
+
 .content-holder {
-  min-height: 400px;
+  min-height: 200px;
   background: white;  
 }
 
@@ -475,8 +613,8 @@ button[role="heading"] {
 }
 
 .datepicker-day-button.active {
-    background: rgba(255,90,95,1);
-    border: 1px solid rgba(255,90,95,1);
+    background: #7DCD00;
+    border: 1px solid #7DCD00;
 }
 
 .datepicker-day-button.active .text-info {
@@ -484,11 +622,11 @@ button[role="heading"] {
 }
 
 .datepicker-day-button.active:hover {
-    background: rgba(255,126,130,1);
+    background: #92EB06;
 }
 
 .datepicker-day-button:hover {
-    background: rgba(255,90,95,1);
+    background: #7DCD00;
     color: white;
 }
 
@@ -695,6 +833,10 @@ input.form-control.email-input {
     padding: 5px;
   }
 
+  input.form-control.password-input.app-password-input {
+    width: 272px;
+  }  
+
   .bond-item-nav-mobile {
     display: block;
   }
@@ -840,14 +982,24 @@ input.form-control.email-input {
 
 @media screen and (max-width: 414px) {
 
+  input.form-control.password-input.app-password-input, .input-containers.application-input-container input.password-input {
+    width: 366px;
+  }  
+
 }
 
 @media screen and (max-width: 375px) {
 
+  input.form-control.password-input.app-password-input, .input-containers.application-input-container input.password-input {
+    width: 328px;
+  }  
+
 }
 
 @media screen and (max-width: 320px) {
-
+  input.form-control.password-input.app-password-input, .input-containers.application-input-container input.password-input {
+    width: 272px;
+  }  
 }
 
 
@@ -1010,4 +1162,12 @@ input.form-control.email-input {
   
 .modal-footer .btn-group:last-child > button {
   border-right: 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+  select,
+  textarea,
+  input {
+    font-size: 16px;
+  }
 }
