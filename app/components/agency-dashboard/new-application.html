@@ -59,7 +59,7 @@
                         <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-person"></i>My Agents</div>
                     </div>
                     <div class="flex-row flex-grow">
-                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-clipboard"></i>Add New Application</div>
+                        <div class="flex-row nav-mobile-item on-route flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-clipboard"></i>Add New Application</div>
                         <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-person"></i>Add New Agent</div>
                     </div>
                 </div>
@@ -201,40 +201,23 @@
                                         <span class="app-input-label">Bond Amount ($AUD)</span>
                                     </p>                                
                                     <p class="input-group">
-                                      <input placeholder="Enter Bond Amount" type="tel" ng-class="{ 'login-error' : agency.loginError }" class="form-control password-input app-password-input"/>
+                                      <input placeholder="Enter Bond Amount" type="tel" pattern="[0-9]*" ng-class="{ 'login-error' : agency.loginError }" class="form-control password-input app-password-input"/>
                                     </p>
                                 </div>  
                                                                  
-                            </div>                                                                                   
+                            </div>                                                                       
 
-                            <div class="flex-row flex-justify-center upload-row">
+                            <div class="flex-row flex-justify-center upload-row complete-upload">
                                 <div class="flex-column flex-grow">
                                     <div class="flex-row flex-justify-center">
-
-                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
-                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        <div class="flex-row drag-and-drop-ticked">
+                                           <i id="uploadTermsheetTick" ng-class="agency.termsheetUploaded ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
                                         </div>
 
-                                        <div class="flex-row drag-and-drop-container">
-                                            <div class="flex-column flex-grow">
-                                                <div class="flex-row flex flex-justify-center">Upload Termsheet</div>                               
-                                            </div>
-                                        </div>
-
-
-<!--                             <div class="flex-row flex-justify-center">
-                                <div class="flex-column input-containers application-input-container">
-                                    <p class="input-group">
-                                        <span class="app-input-label">Upload Termsheet</span>
-                                    </p>                                
-
-                                    <p class="input-group">
-                                      <input placeholder="Upload your Termsheet" type="file" accept="image/*;capture=camera" class="custom-file-input" />
-                                    </p>
-                                </div>  
-                            </div>  -->
-
-
+                                        <div class="fileUpload drag-and-drop-container">
+                                            <span>Upload Termsheet</span>
+                                            <input id="uploadBtnTermsheet" type="file" accept="image/*;capture=camera" class="upload" />
+                                        </div>                                          
 
                                         <div 
                                            uib-popover="The termsheet outlines your rental agreement. You will recieve this from your rental agency when applying for your new rental."
@@ -248,19 +231,17 @@
                                 </div>
                             </div>  
 
-                            <div class="flex-row flex-justify-center upload-row">
+                            <div class="flex-row flex-justify-center upload-row complete-upload">
                                 <div class="flex-column flex-grow">
                                     <div class="flex-row flex-justify-center">
-
-                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
-                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        <div class="flex-row drag-and-drop-ticked">
+                                           <i id="uploadLicenseTick" ng-class="agency.termsheetUploaded ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
                                         </div>
 
-                                        <div class="flex-row drag-and-drop-container">
-                                            <div class="flex-column flex-grow">
-                                                <div class="flex-row flex flex-justify-center">Upload Drivers License</div>
-                                            </div>
-                                        </div>
+                                        <div class="fileUpload drag-and-drop-container">
+                                            <span>Upload Drivers License</span>
+                                            <input id="uploadBtnLicense" type="file" accept="image/*;capture=camera" class="upload" />
+                                        </div>                                          
 
                                         <div 
                                            uib-popover="Please upload a valid drivers license"
@@ -271,33 +252,31 @@
 
                                     </div>
                                 </div>
-                            </div>  
+                            </div> 
 
-                            <div class="flex-row flex-justify-center upload-row">
+                            <div class="flex-row flex-justify-center upload-row complete-upload">
                                 <div class="flex-column flex-grow">
                                     <div class="flex-row flex-justify-center">
-
-                                        <div ng-click="agency.toggleTick()" class="flex-row drag-and-drop-ticked">
-                                           <i ng-class=" agency.ticked ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
+                                        <div class="flex-row drag-and-drop-ticked">
+                                           <i id="uploadIdTick" ng-class="agency.termsheetUploaded ? 'ion-ios-checkmark' : 'ion-ios-checkmark-outline'"></i>
                                         </div>
 
-                                        <div class="flex-row drag-and-drop-container">
-                                            <div class="flex-column flex-grow">
-                                                <div class="flex-row flex flex-justify-center">Upload Photo ID</div>
-                                            </div>
-                                        </div>
+                                        <div class="fileUpload drag-and-drop-container">
+                                            <span>Upload Photo ID</span>
+                                            <input id="uploadBtnId" type="file" accept="image/*;capture=camera" class="upload" />
+                                        </div>                                          
 
                                         <div 
                                            uib-popover="Please upload a passport style ID photo."
                                            popover-trigger="mouseenter" 
-                                           popover-title="What type of ID photo?"
+                                           popover-title="What type of ID photo?"                                           
                                            class="flex-row drag-and-drop-help">
                                            <i class="ion-ios-help-outline"></i>
                                         </div>
 
                                     </div>
                                 </div>
-                            </div>   
+                            </div>                                                             
 
                             <div class="flex-row flex-justify-center upload-row">
                                 <div class="flex-column flex-grow">

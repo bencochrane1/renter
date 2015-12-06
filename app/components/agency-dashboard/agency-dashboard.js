@@ -21,7 +21,54 @@ function AgencyDashboardCtrl($scope, $location, AnchorSmoothScroll) {
     agency.loggingIn = false;
     agency.submitEnabled = false;
     agency.gotoElement = gotoElement;
-    
+
+    agency.termSheetTicked = true;
+    agency.licenseTicked = true;
+    agency.idTicked = true;
+    agency.hideFirstTime = false;
+
+    agency.submitEnabledCheck = submitEnabledCheck;
+
+    function submitEnabledCheck() {
+      if (agency.termSheetTicked && agency.licenseTicked && agency.idTicked) {
+        agency.submitEnabled = true;
+        console.log('submit enabled: ', agency.submitEnabled);
+      }
+    }
+
+    if (document.getElementById("uploadBtnTermsheet") === null) { 
+      return 
+    } else {
+      document.getElementById("uploadBtnTermsheet").onchange = function () {
+          var element = document.getElementById("uploadTermsheetTick");
+          element.className = 'ion-ios-checkmark';
+          agency.termSheetTicked = true;
+          agency.submitEnabledCheck();
+      };
+    }
+
+    if (document.getElementById("uploadBtnLicense") === null) { 
+      return 
+    } else {
+      document.getElementById("uploadBtnLicense").onchange = function () {
+        if (document.getElementById("uploadBtnLicense") === null) { return };
+          var element = document.getElementById("uploadLicenseTick");
+          element.className = 'ion-ios-checkmark';
+          agency.licenseTicked = true;
+      }; 
+    }   
+
+    if (document.getElementById("uploadBtnId") === null) { 
+      return 
+    } else {    
+      document.getElementById("uploadBtnId").onchange = function () {
+        if (document.getElementById("uploadBtnId") === null) { return };
+          var element = document.getElementById("uploadIdTick");
+          element.className = 'ion-ios-checkmark';
+          agency.idTicked = true;
+      };
+    }
+
     function gotoElement(eID){
       // set the location.hash to the id of
       // the element you wish to scroll to.

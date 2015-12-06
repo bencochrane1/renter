@@ -37,6 +37,18 @@
       </div>
     </div>
 
+    <div class="flex-row first-time-dashboard-container" ng-click="agency.hideFirstTime = !agency.hideFirstTime" ng-class="{ 'hide-agency' : agency.hideFirstTime }">
+        <div class="flex-column flex-grow first-time-inner">
+            <div class="flex-row">
+                <div class="flex-row flex-grow first-time-title">Welcome to BondFree. What is BondFree?</div>
+                <div class="flex-row close-first-time flex-justify-right"><i class="ion-close-round"></i></div>
+            </div>
+            <div class="flex-row first-time-text">
+                <div class="flex-row">BondFree was created to assist in helping people into a new rental by reducing the upfront burden of a bond. We charge a one-off fee of 20% of the value of a tenants bond and we guarantee the rest. <br><br> It's great for both tentants giving them a fresh start, but also for rental managers by increasing their occupancy rates whilst still having a guarantee on over the bond.</div>
+            </div>
+        </div>
+    </div>
+
     <div class="flex-row main-dashboard-container">
         <div class="flex-column main-side-nav">
             <div class="flex-row main-nav-option on-route">My Applications</div>
@@ -55,7 +67,7 @@
             <div class="flex-row nav-content-holder">
                 <div class="flex-column flex-grow">
                     <div class="flex-row flex-grow">
-                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-clipboard"></i>My Applications</div>
+                        <div class="flex-row nav-mobile-item on-route flex-justify-center flex-grow"><i class="ion-clipboard"></i>My Applications</div>
                         <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-person"></i>My Agents</div>
                     </div>
                     <div class="flex-row flex-grow">
@@ -105,8 +117,8 @@
                                 <div class="flex-row">267 Underwood Street, Paddington, NSW</div>
                                 <div class="flex-row">$67.85</div>
 
-                                <div class="flex-row content-view-button flex-justify-right bond-item-nav">
-                                    <div class="login-button-nav" ui-sref="agency">
+                                <div ui-sref="showApplication" class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                    <div class="login-button-nav">
                                       <span class="login logout">View</span>
                                     </div>
                                 </div>
@@ -124,8 +136,8 @@
                                 <div class="flex-row">12 Main Street, Newtown, NSW</div>
                                 <div class="flex-row">$34.25</div>
 
-                                <div class="flex-row content-view-button flex-justify-right bond-item-nav">
-                                    <div class="login-button-nav" ui-sref="agency">
+                                <div ui-sref="showApplication" class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                    <div class="login-button-nav">
                                       <span class="login logout">View</span>
                                     </div>
                                 </div>
@@ -143,8 +155,8 @@
                                 <div class="flex-row">98 Sussex Street, Sydney, NSW</div>
                                 <div class="flex-row">$74.15</div>
 
-                                <div class="flex-row content-view-button flex-justify-right bond-item-nav">
-                                    <div class="login-button-nav" ui-sref="agency">
+                                <div ui-sref="showApplication" class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                    <div class="login-button-nav">
                                       <span class="login logout">View</span>
                                     </div>
                                 </div>
