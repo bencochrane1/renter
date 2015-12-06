@@ -36,6 +36,30 @@ select {
   border-radius: 0;
 }
 
+#scrollArea {
+  height: 100%;
+  overflow: auto;
+}
+
+.error-container {
+  padding: 20px;
+  background: lightpink;
+  border: 1px solid #F51010;
+  border-radius: 3px; 
+  display: none;
+  margin: 10px;
+}
+
+.show-error-container {
+  display: block;
+}
+
+.title-bar-help {
+  font-size: 1.5em;
+  line-height: 0;
+  margin-left: 10px;
+}
+
 .upload-row:last-of-type {
   margin-bottom: 30px;
 }
@@ -49,10 +73,16 @@ select {
 }
 
 .drag-and-drop-container.submit-app-container {
-  background-color: #7DCD00;
+  background-color: #A2CD5F;
   color: white;
+  cursor: not-allowed;
   border: none;
   transition: -webkit-box-shadow 0.3s;
+}
+
+.drag-and-drop-container.submit-app-container.enabled {
+  cursor: pointer;
+  background-color: #7DCD00;
 }
 
 .drag-and-drop-container.submit-app-container:hover {
@@ -126,7 +156,7 @@ select {
   border: 2px solid #1976d2;
   height: 60px;
   border-radius: 3px;
-  font-size: 1.3em;
+  font-size: 1em;
   max-width: 400px;
   transition: background-color 0.3s;
 }
@@ -289,11 +319,15 @@ select {
 }
 
 .main-content-header {
-  background-color: #edefed;
+  background-color: #7DCD00;
   font-size: 1.3em;
   color: grey;
   padding: 15px; 
   border-bottom: 1px solid lightgrey; 
+}
+
+.main-content-header span, .main-content-header i {
+  color: white;
 }
 
 .main-content-search input {
@@ -354,6 +388,14 @@ select {
 
 .main-nav-option.main-add-application {
   padding: 0;
+}
+
+.main-nav-option.main-add-application.on-route, .main-nav-option.on-route {
+  background-color: #7DCD00;
+}
+
+.main-nav-option.main-add-application.on-route *, .main-nav-option.on-route  {
+  color: white;
 }
 
 .main-add-application .flex-row {

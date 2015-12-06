@@ -39,7 +39,7 @@
 
     <div class="flex-row main-dashboard-container">
         <div class="flex-column main-side-nav">
-            <div class="flex-row main-nav-option">My Applications</div>
+            <div class="flex-row main-nav-option on-route">My Applications</div>
             <div class="flex-row main-nav-option">My Agents</div>
             <div class="flex-row main-nav-option main-add-application">
                 <div class="flex-row flex-grow" ui-sref="newApplication">Add New Application</div>
@@ -68,7 +68,17 @@
 
             <div class="flex-row main-content-holder">
                 <div class="flex-column flex-grow content-holder">
-                    <div class="flex-row main-content-header">My Applications</div>
+                    <div class="flex-row main-content-header"><span>My Applications</span>
+
+                        <div 
+                           uib-popover="This is a list of all applications you have submitted on behalf of your potential and current tenants who applied for a BondFree bond."
+                           popover-trigger="mouseenter" 
+                           popover-placement="bottom"
+                           popover-title="Applications"
+                           class="flex-row title-bar-help">
+                           <i class="ion-ios-help-outline"></i>
+                        </div>
+                    </div>  
 
                     <div class="inner-addon left-addon flex-row main-content-search">
                         <i class="glyphicon glyphicon-search"></i>

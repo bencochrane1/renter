@@ -2,7 +2,7 @@ angular
     .module('app.agencydashboard', [])
     .controller('AgencyDashboardCtrl', AgencyDashboardCtrl);
 
-function AgencyDashboardCtrl() {
+function AgencyDashboardCtrl($scope, $location, AnchorSmoothScroll) {
     var agency = this;
     agency.today = today();
     agency.clear = clear; 
@@ -19,13 +19,19 @@ function AgencyDashboardCtrl() {
 
     agency.toggleLogin = toggleLogin;
     agency.loggingIn = false;
-    agency.go = go;
+    agency.submitEnabled = false;
+    agency.gotoElement = gotoElement;
+    
+    function gotoElement(eID){
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      $location.hash('top');
+ 
+      // call $anchorScroll()
+      AnchorSmoothScroll.scrollTo(eID);
+    };
 
-    function go() {
-        console.log('here')
-    }
-
-    function toggleLogin() {
+    function toggleLogin(eID) {
 
       if (agency.loginError) {
         agency.loginError = false;
@@ -34,10 +40,12 @@ function AgencyDashboardCtrl() {
       }
       agency.loggingIn = !agency.loggingIn;
       agency.loginError = !agency.loginError;
+      agency.gotoElement(eID);
     }
 
     function toggleTick() {
         agency.ticked = !agency.ticked;
+        agency.submitEnabled = !agency.submitEnabled;
     }
 
     function today() {

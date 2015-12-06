@@ -41,7 +41,7 @@
         <div class="flex-column main-side-nav">
             <div class="flex-row main-nav-option" ui-sref="agencyDashboard">My Applications</div>
             <div class="flex-row main-nav-option">My Agents</div>
-            <div class="flex-row main-nav-option main-add-application">
+            <div class="flex-row main-nav-option main-add-application on-route">
                 <div class="flex-row flex-grow">Add New Application</div>
                 <div class="flex-row plus"><i class="ion-plus"></i></div>
             </div>
@@ -66,12 +66,38 @@
             </div>
 
 
-            <div class="flex-row main-content-holder">
+            <div class="flex-row main-content-holder" id="top">
                 <div class="flex-column flex-grow content-holder">
-                    <div class="flex-row main-content-header">Add New Application</div>               
+                    <div class="flex-row main-content-header"><span>Add New Application</span>
+
+                        <div 
+                           uib-popover="As a rental manager, you are placing an application on behalf of your client to have BondFree secure their bond. There is a AUD$69 processing fee for all tenant bond applications to BondFree."
+                           popover-trigger="mouseenter" 
+                           popover-placement="bottom"
+                           popover-title="What is this application for?"
+                           class="flex-row title-bar-help">
+                           <i class="ion-ios-help-outline"></i>
+                        </div>
+                    </div>               
 
                     <div class="flex-row application-form-content">
                         <div class="flex-column flex-grow">
+                            
+                            <div class="flex-row error-container" ng-class="{ 'show-error-container' : agency.loginError }">
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <strong><span class="app-input-label">Please fix the following to submit your application:</span></strong>
+                                    </p>
+                                    <p class="input-group">
+                                        <span class="app-input-label">Enter an email address</span>
+                                    </p>                                    
+                                    <p class="input-group">
+                                        <span class="app-input-label">Enter a tenant full name</span>
+                                    </p>                                                                        
+                                </div>                                 
+                            </div>
+
+
                             <div class="flex-row flex-justify-center">
 
                                 <div class="flex-column input-containers application-input-container">
@@ -123,6 +149,8 @@
                                       placeholder="Start Of Lease Date" 
                                       type="text" 
                                       class="form-control password-input" 
+                                      ng-class="{ 'login-error' : agency.loginError }"
+                                      -webkit-box-shadow: 0 0 0 2px #F51010;
                                       show-weeks="false" 
                                       uib-datepicker-popup="{{agency.format}}" 
                                       ng-model="agency.dtCheckIn" 
@@ -150,6 +178,7 @@
                                       placeholder="End Of Lease Date" 
                                       type="text" 
                                       class="form-control password-input" 
+                                      ng-class="{ 'login-error' : agency.loginError }"
                                       show-weeks="false" 
                                       uib-datepicker-popup="{{agency.format}}" 
                                       ng-model="agency.dtCheckOut" 
@@ -163,7 +192,20 @@
                                       close-text="Close" />
                                     </p>
                                 </div>  
-                            </div>                                                          
+                            </div>  
+
+                            <div class="flex-row flex-justify-center">
+
+                                <div class="flex-column input-containers application-input-container">
+                                    <p class="input-group">
+                                        <span class="app-input-label">Bond Amount ($AUD)</span>
+                                    </p>                                
+                                    <p class="input-group">
+                                      <input placeholder="Enter Bond Amount" type="tel" ng-class="{ 'login-error' : agency.loginError }" class="form-control password-input app-password-input"/>
+                                    </p>
+                                </div>  
+                                                                 
+                            </div>                                                                                   
 
                             <div class="flex-row flex-justify-center upload-row">
                                 <div class="flex-column flex-grow">
@@ -249,7 +291,7 @@
                                         <div class="flex-row drag-and-drop-ticked">
                                         </div>
 
-                                        <div ng-class="{ 'logging-in' : agency.loggingIn }" ng-click="agency.toggleLogin()" class="flex-row drag-and-drop-container submit-app-container">
+                                        <div ng-class="{ 'logging-in' : agency.loggingIn, 'enabled' : agency.submitEnabled }" ng-click="agency.toggleLogin('top')" class="flex-row drag-and-drop-container submit-app-container">
                                             <div class="flex-column flex-grow">
                                                 <div class="flex-row flex flex-justify-center">
                                                     <span ng-if="agency.loggingIn"><div class="loading"><div class="outer"></div><div class="inner"></div></div>Submitting...</span>

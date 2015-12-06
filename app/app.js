@@ -17,7 +17,8 @@ angular.module('bondfree',
     'UserService',
     'BookingService',
     'RoomService',
-    'google.places'
+    'google.places',
+    'AnchorSmoothScroll'
   ])
 
   .controller('MainCtrl', MainCtrl);

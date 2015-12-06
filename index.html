@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>BondFree</title>
 
     <base href="/">
@@ -49,6 +49,7 @@
     <script src="./app/shared/BookingService.js"></script>
     <script src="./app/shared/UserService.js"></script>
     <script src="./app/shared/RoomService.js"></script>
+    <script src="./app/shared/SmoothScroll.js"></script>
 
     <!-- load our core angular app -->
     <script src="./app/app.routes.js"></script>
@@ -57,7 +58,7 @@
 
 
 </head>
-<body ng-app="bondfree">
+<body id="scrollArea" ng-app="bondfree">
 
   <div ui-view></div>
 
