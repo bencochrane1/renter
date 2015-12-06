@@ -1,0 +1,156 @@
+<div class="flex-column">
+    <div class="flex-row app-nav-header">
+
+      <div class="flex-row flex-grow nav-header">
+        <div class="flex-row flex-grow icon-container">
+          <div class="logo-home-container">
+            <div class="nav-logo app-nav-logo">
+              <span class="logo-first-part app-logo-first-part">Bond</span>
+              <span class="logo-second-part app-logo-second-part">Free</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex-row">
+
+        <div class="flex-column nav-login-switch-prompt main-user-nav">
+          <div class="flex-row">
+            <div class="flex-column"><i class="nav-icon icon-rental-agency ion-person"></i></div>
+            <div class="flex-column nav-title app-nav-title">Ben (Ray White Paddington)</div>
+          </div>
+        </div>
+        <div class="flex-column nav-login-switch-prompt main-user-nav-mobile">
+          <div class="flex-row">
+            <div class="flex-column"><i class="nav-icon icon-rental-agency ion-person"></i></div>
+            <div class="flex-column nav-title app-nav-title">Ben</div>
+          </div>
+        </div>        
+        <div class="flex-column nav-logout-holder">
+          <div class="flex-row flex-justify-center">
+            <div class="login-button-nav app-logout-button nav-logout-only" ui-sref="home">
+              <span class="login">Log Out</span>
+              <span class="agency-login">Log Out</span>
+            </div>
+          </div>
+        </div>     
+
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-row main-dashboard-container">
+        <div class="flex-column main-side-nav">
+            <div class="flex-row main-nav-option on-route" ui-sref="agencyDashboard">My Applications</div>
+            <div class="flex-row main-nav-option">My Agents</div>
+            <div class="flex-row main-nav-option main-add-application">
+                <div class="flex-row flex-grow" ui-sref="newApplication">Add New Application</div>
+                <div class="flex-row plus"><i class="ion-plus"></i></div>
+            </div>
+            <div class="flex-row main-nav-option main-add-application">
+                <div class="flex-row flex-grow">Add New Agent</div>
+                <div class="flex-row plus"><i class="ion-plus"></i></div>
+            </div>            
+        </div>
+        <div class="flex-column main-center-content">
+
+            <div class="flex-row nav-content-holder">
+                <div class="flex-column flex-grow">
+                    <div class="flex-row flex-grow">
+                        <div ui-sref="agencyDashboard" class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-clipboard"></i>My Applications</div>
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-person"></i>My Agents</div>
+                    </div>
+                    <div class="flex-row flex-grow">
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-clipboard"></i>Add New Application</div>
+                        <div class="flex-row nav-mobile-item flex-justify-center flex-grow"><i class="ion-plus"></i><i class="ion-person"></i>Add New Agent</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="flex-row main-content-holder show-application" id="top">
+                <div class="flex-column flex-grow content-holder">
+                    <div class="flex-row main-content-header back-button">
+                    <span ui-sref="agencyDashboard"><i class="ion-chevron-left"></i>Back</span>
+                    <span><i class="ion-clipboard"></i>Bond Application: 25 New Street, Newtown (Ref: ec94ae)</span>
+                    </div>
+
+                    <div class="flex-row show-content-holder">
+                        <div class="flex-row flex-grow">
+                            <div class="flex-column flex-grow content-rows-holder">
+                                <div class="flex-row">
+                                    <span class="show-content-title">Tenant Name: </span>Bill Bobs
+                                </div>
+                                <div class="flex-row">
+                                    <span class="show-content-title">Address: </span>Newtown, NSW, 2021
+                                </div>
+                                <div class="flex-row"><span class="show-content-title">Bond Reference Number:</span> ec94ae
+                                </div>
+                                <div class="flex-row"><span class="show-content-title">Lease From: </span>28/12/2015</div>
+                                <div class="flex-row"><span class="show-content-title">Lease To:</span> 27/12/2016</div>
+                                <div class="flex-row"><span class="show-content-title">Status:</span>Submitted</div>
+                                <div class="flex-row"><span class="show-content-title">Termsheet:</span>Download PDF <i class="ion-ios-download-outline"></i></div>
+                                <div class="flex-row"><span class="show-content-title">Fee Due (AUD):</span>$69 <i class="ion-ios-help-outline"></i></div>
+
+                                <div class="flex-row flex-grow show-content-button-options-mobile">
+                                    <div class="flex-column flex-grow">
+                                        <div class="flex-row flex-justify-center">
+                                            <div class="flex-row content-view-button flex-justify-right bond-item-nav show-page-item">
+                                                <div class="login-button-nav" ui-sref="agency">
+                                                  <span class="login logout">Make Payment <i class="options ion-locked"></i></span>
+                                                </div>
+                                            </div>                                    
+                                        </div>
+                                        <div class="flex-row flex-justify-center">
+                                            <div class="flex-row content-view-button flex-justify-right bond-item-nav show-page-item">
+                                                <div class="login-button-nav" ui-sref="agency">
+                                                  <span class="login logout">Terminate Bond<i class="options ion-close-round"></i></span>
+                                                </div>
+                                            </div>                                    
+                                        </div>
+                                        <div class="flex-row flex-justify-center">
+                                            <div class="flex-row content-view-button flex-justify-right bond-item-nav show-page-item">
+                                                <div class="login-button-nav" ui-sref="agency">
+                                                  <span class="login logout">Change Bond Amount $</span>
+                                                </div>
+                                            </div>                                    
+                                        </div>                                                                
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="flex-row flex-grow show-content-button-options">
+                            <div class="flex-column flex-grow">
+                                <div class="flex-row flex-grow flex-justify-center">
+                                    <div class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                        <div class="login-button-nav" ui-sref="agency">
+                                          <span class="login logout">Make Payment <i class="options ion-locked"></i></span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="flex-row flex-grow flex-justify-center">
+                                    <div class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                        <div class="login-button-nav" ui-sref="agency">
+                                          <span class="login logout">Terminate Bond<i class="options ion-close-round"></i></span>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <div class="flex-row flex-grow flex-justify-center">
+                                    <div class="flex-row content-view-button flex-justify-right bond-item-nav">
+                                        <div class="login-button-nav" ui-sref="agency">
+                                          <span class="login logout">Change Bond Amount $</span>
+                                        </div>
+                                    </div>                                    
+                                </div>                                                                
+                            </div>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</div>
