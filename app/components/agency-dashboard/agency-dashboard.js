@@ -19,6 +19,11 @@ function AgencyDashboardCtrl() {
 
     agency.toggleLogin = toggleLogin;
     agency.loggingIn = false;
+    agency.go = go;
+
+    function go() {
+        console.log('here')
+    }
 
     function toggleLogin() {
 
